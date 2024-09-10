@@ -1433,19 +1433,26 @@
                     height: 20px;
                 }
             }
-                .thumbnail-list {
+
+            .thumbnail-list {
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
+                flex-wrap: wrap; /* 썸네일들이 화면을 넘어가지 않도록 줄바꿈 */
                 margin-bottom: 20px;
+                max-width: 100%; /* 부모 요소의 너비를 넘지 않도록 설정 */
+                padding: 0 10px; /* 양옆 여백을 추가해 화면 끝에 닿지 않게 함 */
+                box-sizing: border-box; /* 패딩이 포함된 크기 계산 */
             }
 
             .thumbnail-list img {
-                width: 100px;
-                height: 70px;
+                width: calc(25% - 10px); /* 25%씩 4개가 한 줄에 배치되도록 조정, 여백 고려 */
+                max-width: 100px; /* 최대 크기 제한 */
+                height: auto;
                 object-fit: cover;
-                margin: 0 5px;
+                margin: 5px; /* 이미지 사이 간격 */
                 cursor: pointer;
                 border: 2px solid transparent;
+                flex-shrink: 0; /* 크기가 줄어들지 않도록 고정 */
             }
 
             .thumbnail-list img.active {
@@ -1551,7 +1558,21 @@
                 
             }
 
+            .map-container {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%; /* 16:9 비율 */
+            }
 
+            .map-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
 
         </style>
     </head>
@@ -1966,7 +1987,7 @@
                                 <div class="content" data-v-2795477a>더휴 웨딩홀 이케이 타워 2층</div>
                                 <div class="content" data-v-2795477a>(서울 강남구 테헤란로 407 EK-TOWER 2층)</div>
                                 <div class="content" data-v-2795477a>선릉역 9번, 10번 출구에서 도보로 약 3분 거리</div>
-                                <div class="my-3">
+                                <div class="map-container">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.1144281736015!2d127.04753977533679!3d37.50521922764264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca39494ca0e77%3A0xf6d6420b4aaf6d54!2z642U7Zy07Juo65Sp7ZmA!5e0!3m2!1sko!2skr!4v1725764851602!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
                                 </div>
                             </div>
