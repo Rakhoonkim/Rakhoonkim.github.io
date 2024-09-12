@@ -523,17 +523,6 @@
                 font-weight: 600;
             }
 
-            .main .fade-in[default] {
-                opacity: 0; /* 처음에 투명하게 시작 */
-                transform: translateY(20px); /* 살짝 아래에서 시작 */
-                transition: opacity 1s ease-out, transform 1s ease-out; /* 서서히 나타나게 하는 트랜지션 */
-            }
-
-            .main .fade-in.visible[default] {
-                opacity: 1; /* 보일 때 */
-                transform: translateY(0); /* 원래 위치로 */
-            }
-
             .main .date[default] {
                 font-size: 20px;
                 padding-top: 16%;
@@ -614,21 +603,10 @@
             }
 
             .message[SubTitle] {
-                font-size: 20px;
+                font-size: 30px;
                 font-weight: 600;
                 background-color:  #F3F3CC;
                 position: relative
-            }
-
-            .message .fade-in[SubTitle] {
-                opacity: 0; /* 처음에 투명하게 시작 */
-                transform: translateY(20px); /* 살짝 아래에서 시작 */
-                transition: opacity 1s ease-out, transform 1s ease-out; /* 서서히 나타나게 하는 트랜지션 */
-            }
-
-            .message .fade-in.visible[SubTitle] {
-                opacity: 1; /* 보일 때 */
-                transform: translateY(0); /* 원래 위치로 */
             }
 
             .message .rose-img[SubTitle] {
@@ -1640,6 +1618,17 @@
                 background-repeat: no-repeat; /* 이미지 반복 방지 */
             }
 
+            .fade-in {
+                opacity: 0; /* 처음에 투명하게 시작 */
+                transform: translateY(20px); /* 살짝 아래에서 시작 */
+                transition: opacity 1s ease-out, transform 1s ease-out; /* 서서히 나타나게 하는 트랜지션 */
+            }
+
+            .fade-in.visible {
+                opacity: 1; /* 보일 때 */
+                transform: translateY(0); /* 원래 위치로 */
+            }
+
             @keyframes fall {
                 0% {
                     top: -10%;
@@ -1690,7 +1679,7 @@
                                         </div>
                                     </div>
                                     <div class="fade-in title" default> 결 혼 합 니 다 </div>
-                                    <img src="images/main/main_01.jpeg" width="90%" class="img" default>
+                                    <img src="images/main/main_01.jpeg" width="90%" class="fade-in img" default>
                                     <div class="fade-in time" default>2025. 01. 18. SAT AM 11:00</div>
                                     <div class="fade-in location" default> 더휴 웨딩홀 2층 </div>
                                 </div>
@@ -1712,7 +1701,7 @@
                                 </div>
                             </div>
                             <div class="contacts" data-v-4752b0dc data-v-227354f0>
-                                <div class="bride-groom" data-v-4752b0dc>
+                                <div class="fade-in bride-groom" data-v-4752b0dc>
                                     <div class="groom-and-bride" data-v-dcbd09b2 data-v-4752b0dc>
                                         <div class="title-wrapper" data-v-dcbd09b2>
                                             <div class="title" data-v-dcbd09b2>신랑</div>
@@ -1750,7 +1739,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="parents" data-v-4752b0dc>
+                                <div class="fade-in parents" data-v-4752b0dc>
                                     <div class="parents-contact" data-v-087ccafd data-v-4752b0dc>
                                         <span class="title" data-v-087ccafd>신랑측 혼주</span>
                                         <div father="[object Object]" mother="[object Object]" class="parents-wrap" data-v-087ccafd>
@@ -1844,9 +1833,9 @@
                                 </div>
                             </div>
                             <div class="gallery" data-v-e42bfae6 data-v-227354f0>
-                                <div class="title" data-v-e42bfae6>··· G a l l e r y ···</div>
+                                <div class="fade-in title" data-v-e42bfae6>··· G a l l e r y ···</div>
                                 <!-- 썸네일 목록 -->
-                                <div class="thumbnail-list">
+                                <div class="fade-in thumbnail-list">
                                     <img src="images/main/gallery_01.jpeg" alt="Gallery 1" data-target="#photoGalleryCarousel" data-slide-to="0" class="active">
                                     <img src="images/main/gallery_02.jpeg" alt="Gallery 2" data-target="#photoGalleryCarousel" data-slide-to="1">
                                     <img src="images/main/gallery_03.jpeg" alt="Gallery 3" data-target="#photoGalleryCarousel" data-slide-to="2">
@@ -1856,7 +1845,7 @@
                                 </div>
                             </div>
                             <!-- 슬라이더 -->
-                            <div id="photoGalleryCarousel" class="carousel slide" data-ride="carousel">
+                            <div id="photoGalleryCarousel" class="fade-in carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <img src="images/main/gallery_01.jpeg" class="d-block w-100" alt="Gallery 1">
@@ -1904,7 +1893,7 @@
                                     </div>
                                 </div> -->
                             </div>
-                            <div class="calendar" data-v-21469558 data-v-227354f0>
+                            <div class="fade-in calendar" data-v-21469558 data-v-227354f0>
                                 <div class="title" data-v-21469558>
                                     <div class="year" data-v-21469558>2025년</div>
                                     <div class="month" data-v-21469558>1월</div>
@@ -2080,17 +2069,17 @@
                             </div>
                             <br>
                             <div class="map">
-                                <div class="title" data-v-f68ce4e0> 오시는 길</div>
-                                <div class="content" SubTitle>더휴 웨딩홀 이케이 타워 2층</div>
-                                <div class="content" SubTitle>(서울 강남구 테헤란로 407 EK-TOWER 2층)</div>
-                                <div class="content" SubTitle>선릉역 9번, 10번 출구에서 도보로 약 3분 거리</div>
-                                <div class="map-container">
+                                <div class="fade-in title" data-v-f68ce4e0> 오시는 길</div>
+                                <div class="fade-in content" SubTitle>더휴 웨딩홀 이케이 타워 2층</div>
+                                <div class="fade-in content" SubTitle>(서울 강남구 테헤란로 407 EK-TOWER 2층)</div>
+                                <div class="fade-in content" SubTitle>선릉역 9번, 10번 출구에서 도보로 약 3분 거리</div>
+                                <div class="fade-in map-container">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.1144281736015!2d127.04753977533679!3d37.50521922764264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca39494ca0e77%3A0xf6d6420b4aaf6d54!2z642U7Zy07Juo65Sp7ZmA!5e0!3m2!1sko!2skr!4v1725764851602!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
                                 </div>
                             </div>
                             
                             <div class="map" data-v-f68ce4e0 data-v-227354f0>
-                                <div class="map-btns" data-v-f68ce4e0>
+                                <div class="fade-in map-btns" data-v-f68ce4e0>
                                     <div class="map-btn" data-v-f68ce4e0>
                                         <a href="https://kko.to/eDItVzjFfn" target="_blank" data-v-f68ce4e0>카카오맵</a>
                                     </div>
@@ -2104,7 +2093,7 @@
                                             <path fill="currentColor" d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z" data-v-f68ce4e0 data-v-f68ce4e0></path>
                                         </svg>
                                     </a> -->
-                                    <div class="location" data-v-f68ce4e0>
+                                    <div class="fade-in location" data-v-f68ce4e0>
                                         <div class="location-title" data-v-f68ce4e0>더휴 웨딩홀 2층</div>
                                         <div class="location-description" data-v-f68ce4e0>
                                             <div data-v-f68ce4e0>
@@ -2115,7 +2104,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="information" data-v-2bc49e4e data-v-227354f0>
+                            <div class="fade-in information" data-v-2bc49e4e data-v-227354f0>
                                 <div class="info" data-v-2bc49e4e>
                                     <div data-v-2bc49e4e>
                                         <div class="info-title" data-v-2bc49e4e>지하철안내</div>
@@ -2144,13 +2133,13 @@
                                 </div>
                             </div>
                             <div class="bank-section" data-v-72f9b44c data-v-227354f0>
-                                <div class="title" data-v-72f9b44c>
+                                <div class="fade-in title" data-v-72f9b44c>
                                     <span data-v-72f9b44c>신랑 & 신부에게 마음 전하기</span>
                                 </div>
-                                <div class="description" data-v-72f9b44c>
+                                <div class="fade-in description" data-v-72f9b44c>
                                     <span data-v-72f9b44c>축복의 의미로 축의금을 전달해보세요.</span>
                                 </div>
-                                <div class="buttons" data-v-72f9b44c>
+                                <div class="fade-in buttons" data-v-72f9b44c>
                                     <div data-v-72f9b44c>
                                         <button class="bank-button" data-v-72f9b44c id="groomBtn"> 신랑측 계좌번호 </button>
                                     </div>
@@ -2186,7 +2175,7 @@
                                     <p class="copied" id="brideCopied" style="display:none;">계좌번호가 복사되었습니다!</p>
                                 </div>
                             </div>
-                            <div class="share" data-v-760883fe data-v-227354f0>
+                            <div class="fade-in share" data-v-760883fe data-v-227354f0>
                                 <div class="buttons" data-v-760883fe>
                                     <div class="button" data-v-760883fe>
                                         <img src="images/icon/kakao.png" height="25px" class="icon" data-v-760883fe>
@@ -2198,7 +2187,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="footer" data-v-3c88c551 data-v-227354f0>
+                            <div class="fade-in footer" data-v-3c88c551 data-v-227354f0>
                                 <div class="message" data-v-3c88c551>2025. 01. 18. 초대합니다</div>
                                 <!-- <div class="madebykye" data-v-3c88c551>made by kye</div> -->
                             </div>
