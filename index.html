@@ -662,37 +662,36 @@
                 color: var(--emphasize);
                 font-size: 20px;
                 font-weight: 600;
-                padding-bottom: 40px
-            }
-            
-            .contacts .fade-in[data-v-4752b0dc] {
-                opacity: 0; /* 처음에 투명하게 시작 */
-                transform: translateY(20px); /* 살짝 아래에서 시작 */
-                transition: opacity 1s ease-out, transform 1s ease-out; /* 서서히 나타나게 하는 트랜지션 */
+                padding-bottom: 40px;
+                max-width: 100%; /* Ensures it doesn't exceed screen size */
             }
 
-            .contacts .fade-in.visible[data-v-4752b0dc] {
-                opacity: 1; /* 보일 때 */
-                transform: translateY(0); /* 원래 위치로 */
-            }
             .contacts .bride-groom[data-v-4752b0dc] {
-                padding: 30px 70px 10px
+                display: flex;
+                justify-content: center; /* 중앙으로 정렬 */
+                padding: 30px 10px 10px;
+                align-items: center;
+                position: relative; /* 각 요소의 위치를 조정하기 위함 */
             }
 
-            .contacts .bride-groom.long[data-v-4752b0dc] {
-                padding: 30px 30px 10px
+            .contacts .bride-groom .title-wrapper[data-v-dcbd09b2] {
+                text-align: center;
+                margin-right: 5px; /* 신랑 쪽을 왼쪽으로 붙이지 않게 */
+                padding-right: 5px; /* 신랑 쪽 여백 추가 */
             }
 
-            .contacts .type2 div[data-v-4752b0dc] {
-                margin-top: 13px
+            .contacts .bride-groom .title-wrapper-right[data-v-dcbd09b2] {
+                text-align: center;
+                margin-left: auto; /* 신부 쪽을 오른쪽으로 붙이지 않게 */
+                padding-left: 40px; /* 신부 쪽 여백 추가 */
             }
 
-            .contacts .type2 div span .dot[data-v-4752b0dc],.contacts .type2 div span[data-v-4752b0dc] {
-                margin: 2px
+            .contacts .bride-groom .icons[data-v-dcbd09b2] {
+                margin-left: 10px;
             }
 
-            .contacts .type2 div span.small[data-v-4752b0dc] {
-                font-size: 14px
+            .contacts .bride-groom-right .icons[data-v-dcbd09b2] {
+                margin-right: 10px;
             }
 
             .contacts .parents[data-v-4752b0dc] {
@@ -713,35 +712,43 @@
 
             .groom-and-bride[data-v-dcbd09b2] {
                 display: flex;
-                justify-content: space-between;
-                margin-bottom: 20px
-            }
-
-            .groom-and-bride .text-right {
-                text-align: right; /* 텍스트 오른쪽 정렬 */
-                flex: 1; /* 남은 공간을 차지하게 해서 대칭 정렬 */
+                justify-content: space-between; /* 양쪽 끝 정렬 */
+                margin-bottom: 20px;
+                gap: 20px; /* 신랑과 신부 사이의 간격 조절 */
             }
 
             .groom-and-bride .text-left {
-                text-align: left; /* 텍스트 왼쪽 정렬 */
-                flex: 1; /* 남은 공간을 차지하게 해서 대칭 정렬 */
+                text-align: left;
+                flex: 1;
             }
+
+            .groom-and-bride .text-right {
+                text-align: right;
+                flex: 1;
+            }
+
             .groom-and-bride .title-wrapper[data-v-dcbd09b2] {
-                display: flex
+                display: flex;
+                flex-direction: column;
+            }
+
+            .groom-and-bride .title-wrapper-right[data-v-dcbd09b2] {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
             }
 
             .groom-and-bride .title[data-v-dcbd09b2] {
                 font-size: 13px;
-                margin-right: 15px;
-                margin-top: 3px
+                margin-bottom: 3px;
             }
 
             .groom-and-bride .icons[data-v-dcbd09b2] {
-                margin-right: 150px;
+                margin-right: 0; /* 신부 쪽 아이콘의 오른쪽 여백 제거 */
             }
 
             .groom-and-bride a[data-v-dcbd09b2] {
-                margin-left: 10px
+                margin-left: 10px;
             }
 
             .groom-and-bride .kakao-id-modal .kakao-id-modal-wrapper[data-v-dcbd09b2] {
@@ -1703,37 +1710,53 @@
                             <div class="contacts" data-v-4752b0dc data-v-227354f0>
                                 <div class="fade-in bride-groom" data-v-4752b0dc>
                                     <div class="groom-and-bride" data-v-dcbd09b2 data-v-4752b0dc>
+                                        <!-- 신랑 왼쪽 -->
                                         <div class="title-wrapper" data-v-dcbd09b2>
                                             <div class="title" data-v-dcbd09b2>신랑</div>
                                             <div data-v-dcbd09b2>락훈</div>
                                         </div>
                                         <div class="icons" data-v-dcbd09b2>
-                                            <a href="tel:010-1234-1234" data-v-dcbd09b2>
-                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-phone fa-w-16" data-v-dcbd09b2 data-v-dcbd09b2>
-                                                    <path fill="currentColor" d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z" data-v-dcbd09b2 data-v-dcbd09b2></path>
+                                            <a href="tel:010-4037-0089" data-v-dcbd09b2>
+                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-phone fa-w-16"
+                                                    data-v-dcbd09b2 data-v-dcbd09b2>
+                                                    <path fill="currentColor"
+                                                        d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                                        data-v-dcbd09b2 data-v-dcbd09b2></path>
                                                 </svg>
                                             </a>
-                                            <a href="sms:010-1234-1234" data-v-dcbd09b2>
-                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sms" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sms fa-w-16" data-v-dcbd09b2 data-v-dcbd09b2>
-                                                    <path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7 1.3 3 4.1 4.8 7.3 4.8 66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128.2 304H116c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H156c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-19 38.6-42.4 38.6zm191.8-8c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8v-68.2l-24.8 55.8c-2.9 5.9-11.4 5.9-14.3 0L224 227.8V296c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8V192c0-8.8 7.2-16 16-16h16c6.1 0 11.6 3.4 14.3 8.8l17.7 35.4 17.7-35.4c2.7-5.4 8.3-8.8 14.3-8.8h16c8.8 0 16 7.2 16 16v104zm48.3 8H356c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H396c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-18.9 38.6-42.3 38.6z" data-v-dcbd09b2 data-v-dcbd09b2></path>
+                                            <a href="sms:010-4037-0089" data-v-dcbd09b2>
+                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sms" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sms fa-w-16"
+                                                    data-v-dcbd09b2 data-v-dcbd09b2>
+                                                    <path fill="currentColor"
+                                                        d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7 1.3 3 4.1 4.8 7.3 4.8 66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128.2 304H116c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H156c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-19 38.6-42.4 38.6zm191.8-8c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8v-68.2l-24.8 55.8c-2.9 5.9-11.4 5.9-14.3 0L224 227.8V296c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8V192c0-8.8 7.2-16 16-16h16c6.1 0 11.6 3.4 14.3 8.8l17.7 35.4 17.7-35.4c2.7-5.4 8.3-8.8 14.3-8.8h16c8.8 0 16 7.2 16 16v104zm48.3 8H356c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H396c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-18.9 38.6-42.3 38.6z"
+                                                        data-v-dcbd09b2 data-v-dcbd09b2></path>
                                                 </svg>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="groom-and-bride" data-v-dcbd09b2 data-v-4752b0dc>
-                                        <div class="title-wrapper" data-v-dcbd09b2>
+                                        <!-- 신부 오른쪽 -->
+                                        <div class="title-wrapper-right" data-v-dcbd09b2>
                                             <div class="title" data-v-dcbd09b2>신부</div>
                                             <div data-v-dcbd09b2>솔이</div>
                                         </div>
                                         <div class="icons" data-v-dcbd09b2>
-                                            <a href="tel:010-1234-1234" data-v-dcbd09b2>
-                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-phone fa-w-16" data-v-dcbd09b2 data-v-dcbd09b2>
-                                                    <path fill="currentColor" d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z" data-v-dcbd09b2 data-v-dcbd09b2></path>
+                                            <a href="tel:010-8983-7079" data-v-dcbd09b2>
+                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-phone fa-w-16"
+                                                    data-v-dcbd09b2 data-v-dcbd09b2>
+                                                    <path fill="currentColor"
+                                                        d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+                                                        data-v-dcbd09b2 data-v-dcbd09b2></path>
                                                 </svg>
                                             </a>
-                                            <a href="sms:010-1234-1234" data-v-dcbd09b2>
-                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sms" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sms fa-w-16" data-v-dcbd09b2 data-v-dcbd09b2>
-                                                    <path fill="currentColor" d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7 1.3 3 4.1 4.8 7.3 4.8 66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128.2 304H116c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H156c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-19 38.6-42.4 38.6zm191.8-8c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8v-68.2l-24.8 55.8c-2.9 5.9-11.4 5.9-14.3 0L224 227.8V296c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8V192c0-8.8 7.2-16 16-16h16c6.1 0 11.6 3.4 14.3 8.8l17.7 35.4 17.7-35.4c2.7-5.4 8.3-8.8 14.3-8.8h16c8.8 0 16 7.2 16 16v104zm48.3 8H356c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H396c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-18.9 38.6-42.3 38.6z" data-v-dcbd09b2 data-v-dcbd09b2></path>
+                                            <a href="sms:010-8983-7079" data-v-dcbd09b2>
+                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sms" role="img"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-sms fa-w-16"
+                                                    data-v-dcbd09b2 data-v-dcbd09b2>
+                                                    <path fill="currentColor"
+                                                        d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7 1.3 3 4.1 4.8 7.3 4.8 66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32zM128.2 304H116c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H156c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-19 38.6-42.4 38.6zm191.8-8c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8v-68.2l-24.8 55.8c-2.9 5.9-11.4 5.9-14.3 0L224 227.8V296c0 4.4-3.6 8-8 8h-16c-4.4 0-8-3.6-8-8V192c0-8.8 7.2-16 16-16h16c6.1 0 11.6 3.4 14.3 8.8l17.7 35.4 17.7-35.4c2.7-5.4 8.3-8.8 14.3-8.8h16c8.8 0 16 7.2 16 16v104zm48.3 8H356c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h12.3c6 0 10.4-3.5 10.4-6.6 0-1.3-.8-2.7-2.1-3.8l-21.9-18.8c-8.5-7.2-13.3-17.5-13.3-28.1 0-21.3 19-38.6 42.4-38.6H396c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8h-12.3c-6 0-10.4 3.5-10.4 6.6 0 1.3.8 2.7 2.1 3.8l21.9 18.8c8.5 7.2 13.3 17.5 13.3 28.1.1 21.3-18.9 38.6-42.3 38.6z"
+                                                        data-v-dcbd09b2 data-v-dcbd09b2></path>
                                                 </svg>
                                             </a>
                                         </div>
@@ -2157,9 +2180,9 @@
                                         신랑측 계좌번호
                                         <span class="popup-close" onclick="closePopup()">×</span>
                                     </div>
-                                    <p class="account-number" onclick="copyText('123-456-789012')">은행: 123-456-789012 (신랑명)</p>
-                                    <p class="account-number" onclick="copyText('234-567-890123')">은행: 234-567-890123 (신랑 아버지명)</p>
-                                    <p class="account-number" onclick="copyText('345-678-901234')">은행: 345-678-901234 (신랑 어머니명)</p>
+                                    <p class="account-number" onclick="copyText('110-349-462513')">신한은행: 110-349-462513 (김락훈)</p>
+                                    <p class="account-number" onclick="copyText('234-567-890123')">농협은행: 234-567-890123 (신랑 아버지명)</p>
+                                    <p class="account-number" onclick="copyText('21603051142111')">농협은행: 21603051142111 (김복숙)</p>
                                     <p class="copied" id="groomCopied" style="display:none;">계좌번호가 복사되었습니다!</p>
                                 </div>
 
@@ -2342,7 +2365,7 @@
             }
 
         // 일정 간격으로 벚꽃 생성
-        setInterval(createFlower, 500); // 0.5초마다 새로운 꽃 생성
+        //setInterval(createFlower, 500); // 0.5초마다 새로운 꽃 생성
 
 </script>
         <script src="/scripts/main.js" defer></script>
@@ -2352,3 +2375,4 @@
 
     </body>
 </html>
+    
