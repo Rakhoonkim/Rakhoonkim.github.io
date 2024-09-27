@@ -15,6 +15,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbit&family=Single+Day&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <!-- 카카오 SDK -->
         <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
         <!-- Bootstrap CSS -->
@@ -1444,10 +1445,43 @@
                     height: auto;
                 }
 
-                /* 슬라이더 내부 패딩 및 마진 조정 */
                 .carousel-inner {
-                    padding: 0;
-                    margin: 0;
+                    position: relative;
+                    width: 100%;
+                    max-height: 400px; /* Set the maximum height for the image container */
+                    display: flex;
+                    justify-content: center; /* Center the images horizontally */
+                    align-items: center;     /* Center the images vertically */
+                    background-color: #000;  /* Background color for letterboxing */
+                }
+
+                .carousel-item img {
+                    max-width: 100%;
+                    max-height: 100%;        /* Ensure the image fits within the container */
+                    width: auto;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    object-fit: contain;     /* Maintain the aspect ratio while fitting within the container */
+                    background-color: #000;  /* Letterbox color (optional) */
+                }
+                
+                .thumbnail-list img {
+                    width: 80px; /* Fixed thumbnail size */
+                    height: 80px;
+                    object-fit: cover; /* To make thumbnails look neat */
+                    margin: 5px;
+                    cursor: pointer;
+                }
+
+                .fade-in {
+                    animation: fadeIn 1.5s ease-in-out;
+                }
+
+                /* Optional: Fade-in animation */
+                @keyframes fadeIn {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
                 }
 
                 /* 슬라이더 컨트롤러(이전/다음 버튼) 크기 줄이기 */
@@ -1666,6 +1700,25 @@
                 }
             }
 
+            .bottom_left {
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                z-index: 1000;
+                background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background for visibility */
+                border-radius: 50%;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                display: flex; /* Align icon within the div */
+                justify-content: center;
+                align-items: center;
+            }
+
+            #music-icon {
+                cursor: pointer;
+                color: #333;
+                font-size: 24px; /* Ensure the icon is large enough */
+            }
         </style>
     </head>
     <body>
@@ -1673,6 +1726,12 @@
             <div id="__layout">
                 <div>
                     <div class="main-container">
+                        <div class="bottom_left">
+                            <audio id="player" src="mus.mp3" autoplay></audio>
+                            <div>
+                                <i id="music-icon" class="fa fa-pause fa-2x" onclick="togglePlay()"></i>
+                            </div>
+                        </div>
                         <div class="falling-flowers-container"></div>
                         <div class="template-basic" data-v-227354f0>
                             <div class="main" default data-v-227354f0>
@@ -1865,6 +1924,8 @@
                                     <img src="images/main/gallery_04.jpeg" alt="Gallery 4" data-target="#photoGalleryCarousel" data-slide-to="3">
                                     <img src="images/main/gallery_05.jpeg" alt="Gallery 5" data-target="#photoGalleryCarousel" data-slide-to="4">
                                     <img src="images/main/gallery_06.jpeg" alt="Gallery 6" data-target="#photoGalleryCarousel" data-slide-to="5">
+                                    <img src="images/main/gallery_07.jpeg" alt="Gallery 7" data-target="#photoGalleryCarousel" data-slide-to="6">
+                                    <img src="images/main/gallery_08.jpeg" alt="Gallery 8" data-target="#photoGalleryCarousel" data-slide-to="7">
                                 </div>
                             </div>
                             <!-- 슬라이더 -->
@@ -1887,6 +1948,12 @@
                                     </div>
                                     <div class="carousel-item">
                                         <img src="images/main/gallery_06.jpeg" class="d-block w-100" alt="Gallery 6">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/main/gallery_07.jpeg" class="d-block w-100" alt="Gallery 7">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/main/gallery_08.jpeg" class="d-block w-100" alt="Gallery 8">
                                     </div>
                                 </div>
                                 <!-- 좌우 네비게이션 -->
@@ -2182,7 +2249,7 @@
                                     </div>
                                     <p class="account-number" onclick="copyText('110-349-462513')">신한은행: 110-349-462513 (김락훈)</p>
                                     <p class="account-number" onclick="copyText('234-567-890123')">농협은행: 234-567-890123 (신랑 아버지명)</p>
-                                    <p class="account-number" onclick="copyText('21603051142111')">농협은행: 21603051142111 (김복숙)</p>
+                                    <p class="account-number" onclick="copyText('216030-51-14211')">농협은행: 216030-51-14211 (김복숙)</p>
                                     <p class="copied" id="groomCopied" style="display:none;">계좌번호가 복사되었습니다!</p>
                                 </div>
 
@@ -2192,9 +2259,8 @@
                                         신부측 계좌번호
                                         <span class="popup-close" onclick="closePopup()">×</span>
                                     </div>
-                                    <p class="account-number" onclick="copyText('456-789-012345')">은행: 456-789-012345 (신부명)</p>
-                                    <p class="account-number" onclick="copyText('567-890-123456')">은행: 567-890-123456 (신부 아버지명)</p>
-                                    <p class="account-number" onclick="copyText('678-901-234567')">은행: 678-901-234567 (신부 어머니명)</p>
+                                    <p class="account-number" onclick="copyText('278-910733-42307')">하나은행: 278-910733-42307 (임솔이)</p>
+                                    <p class="account-number" onclick="copyText('805-21-0897-936')">국민은행: 805-21-0897-936 (황경애)</p>
                                     <p class="copied" id="brideCopied" style="display:none;">계좌번호가 복사되었습니다!</p>
                                 </div>
                             </div>
@@ -2364,15 +2430,43 @@
                 }, 10000); // 10초 후 제거
             }
 
+            let isPlaying = false;
+            const player = document.getElementById('player');
+            const icon = document.getElementById('music-icon');
+
+            // Play music when user interacts with the page
+            document.addEventListener('click', function() {
+                if (!isPlaying) {
+                    player.play();
+                    isPlaying = true;
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                }
+            }, { once: true });
+
+            // Toggle play/pause
+            function togglePlay() {
+                if (isPlaying) {
+                    player.pause();
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                } else {
+                    player.play();
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                }
+                isPlaying = !isPlaying;
+            }
+
         // 일정 간격으로 벚꽃 생성
         //setInterval(createFlower, 500); // 0.5초마다 새로운 꽃 생성
-
 </script>
         <script src="/scripts/main.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+       
     </body>
 </html>
     
