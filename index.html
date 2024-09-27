@@ -1446,42 +1446,8 @@
                 }
 
                 .carousel-inner {
-                    position: relative;
-                    width: 100%;
-                    max-height: 400px; /* Set the maximum height for the image container */
-                    display: flex;
-                    justify-content: center; /* Center the images horizontally */
-                    align-items: center;     /* Center the images vertically */
-                    background-color: #000;  /* Background color for letterboxing */
-                }
-
-                .carousel-item img {
-                    max-width: 100%;
-                    max-height: 100%;        /* Ensure the image fits within the container */
-                    width: auto;
-                    height: auto;
-                    display: block;
-                    margin: 0 auto;
-                    object-fit: contain;     /* Maintain the aspect ratio while fitting within the container */
-                    background-color: #000;  /* Letterbox color (optional) */
-                }
-                
-                .thumbnail-list img {
-                    width: 80px; /* Fixed thumbnail size */
-                    height: 80px;
-                    object-fit: cover; /* To make thumbnails look neat */
-                    margin: 5px;
-                    cursor: pointer;
-                }
-
-                .fade-in {
-                    animation: fadeIn 1.5s ease-in-out;
-                }
-
-                /* Optional: Fade-in animation */
-                @keyframes fadeIn {
-                    0% { opacity: 0; }
-                    100% { opacity: 1; }
+                    padding: 0;
+                    margin: 0;
                 }
 
                 /* 슬라이더 컨트롤러(이전/다음 버튼) 크기 줄이기 */
